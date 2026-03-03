@@ -1,0 +1,16 @@
+[debug] [2026-02-26T19:04:49.119Z] ----------------------------------------------------------------------
+[debug] [2026-02-26T19:04:49.120Z] Command:       /opt/homebrew/Cellar/node/25.6.1/bin/node /opt/homebrew/bin/firebase deploy --only hosting
+[debug] [2026-02-26T19:04:49.121Z] CLI Version:   15.8.0
+[debug] [2026-02-26T19:04:49.121Z] Platform:      darwin
+[debug] [2026-02-26T19:04:49.121Z] Node Version:  v25.6.1
+[debug] [2026-02-26T19:04:49.121Z] Time:          Fri Feb 27 2026 03:04:49 GMT+0800 (Malaysia Time)
+[debug] [2026-02-26T19:04:49.121Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-02-26T19:04:49.559Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-02-26T19:04:49.559Z] > authorizing via signed-in user (edbertjonnathan@gmail.com)
+[debug] [2026-02-26T19:04:49.559Z] [iam] checking project wegood4u-web for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-02-26T19:04:49.560Z] Checked if tokens are valid: true, expires at: 1772134356531
+[debug] [2026-02-26T19:04:49.560Z] Checked if tokens are valid: true, expires at: 1772134356531
+[debug] [2026-02-26T19:04:49.560Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/wegood4u-web:testIamPermissions [none]
+[debug] [2026-02-26T19:04:49.560Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/wegood4u-web:testIamPermissions  x-goog-user-project=wegood4u-web
+[debug] [2026-02-26T19:04:49.560Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wegood4u-web:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}

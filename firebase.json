@@ -1,10 +1,16 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/reset-password",
+        "destination": "/reset-password.html"
+      }
     ],
     "redirects": [
       {
