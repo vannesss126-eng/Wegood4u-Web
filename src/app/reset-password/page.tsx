@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { supabase } from '@/lib/supabaseClient';
 
 export default function ResetPasswordPage() {
@@ -13,6 +12,7 @@ export default function ResetPasswordPage() {
   const [confirm, setConfirm] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const [email, setEmail] = useState<string | null>(null);
 
   useEffect(() => {
     const run = async () => {
@@ -42,6 +42,11 @@ export default function ResetPasswordPage() {
           setError('Could not validate reset link. Please request a new one.');
           setIsValidLink(false);
           return;
+        }
+
+        const { data, error: userError } = await supabase.auth.getUser();
+        if (!userError && data.user) {
+          setEmail(data.user.email ?? null);
         }
 
         setIsValidLink(true);
@@ -119,16 +124,19 @@ export default function ResetPasswordPage() {
     <div className="flex min-h-screen items-center justify-center bg-zinc-50">
       <div className="w-full max-w-md rounded-lg bg-white p-6 shadow">
         <div className="mb-6 flex justify-center">
-          <Image
+          <img
             src="/wegood4u.png"
             alt="Wegood4u"
-            width={240}
-            height={80}
             className="h-auto w-full max-w-[240px] object-contain"
-            priority
           />
         </div>
         <h1 className="mb-4 text-2xl font-semibold text-[#206E56]">Set a new password</h1>
+
+        {email && (
+          <p className="mb-2 text-sm text-zinc-600">
+            Resetting password for <span className="font-medium">{email}</span>
+          </p>
+        )}
 
         {error && (
           <p className="mb-3 text-sm text-red-600">
