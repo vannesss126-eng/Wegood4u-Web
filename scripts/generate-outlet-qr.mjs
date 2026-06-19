@@ -1,18 +1,20 @@
 // Generate one QR code per Thai Geng outlet, encoding a stable web URL that carries
 // the outlet's referral code (e.g. https://wegood4u.com/r/TGMBJ7).
 //
-// The codes match store_referral_codes (seeded by migration 20260611120000). The QR is
-// just a picture of the URL string — keep the URL stable and you never reprint.
+// The codes come from store_referral_codes (Supabase) — NOT hard-coded here, so the repo
+// never carries the live referral codes. The QR is just a picture of the URL string —
+// keep the URL stable and you never reprint.
 //
-// Run:
-//   npm i -D qrcode
-//   node scripts/generate-outlet-qr.mjs
-//   QR_BASE_URL=https://wegood4u.com/r node scripts/generate-outlet-qr.mjs   # override base
+// Run (Node ≥ 20.6 auto-loads .env.local for NEXT_PUBLIC_SUPABASE_URL / _ANON_KEY):
+//   npm i -D qrcode @supabase/supabase-js
+//   node --env-file=.env.local scripts/generate-outlet-qr.mjs
+//   QR_BASE_URL=https://wegood4u.com/r node --env-file=.env.local scripts/generate-outlet-qr.mjs   # override base
 //
 // Output: ./qr-codes/<code>.png (1024px, for print) + <code>.svg (vector, scales to any size).
 // Hand these to the design team to drop onto the in-shop poster.
 
 import QRCode from 'qrcode';
+import { createClient } from '@supabase/supabase-js';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -23,16 +25,26 @@ import path from 'node:path';
 // the QR image itself can be generated/designed now and regenerated for free.
 const BASE_URL = process.env.QR_BASE_URL || 'https://wegood4u-web.web.app/r';
 
-const OUTLETS = [
-  { name: 'Thai Geng Mookata Bukit Raja Klang',      code: 'TGMBRK1' },
-  { name: 'Thai Geng Mookata Bayu Tinggi Klang',     code: 'TGMBTK2' },
-  { name: 'Thai Geng Mookata Puchong Kinrara',       code: 'TGMPK3' },
-  { name: 'Thai Geng Mookata Semenyih Ecohill',      code: 'TGMSE4' },
-  { name: 'Thai Geng Mookata (Cheras Jln Lanchang)', code: 'TGMCJL5' },
-  { name: 'Thai Geng Mookata Kepong',                code: 'TGMKP6' },
-  { name: 'Thai Geng Mookata Bukit Jalil',           code: 'TGMBJ7' },
-  { name: 'Thai Geng Signature Mookata Buffet SS2',  code: 'TGSMBSS28' },
-];
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  console.error('Missing NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY. Run with: node --env-file=.env.local scripts/generate-outlet-qr.mjs');
+  process.exit(1);
+}
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const { data, error } = await supabase
+  .from('store_referral_codes')
+  .select('code, partner_stores(name)');
+if (error) {
+  console.error(`Failed to load referral codes from Supabase: ${error.message}`);
+  process.exit(1);
+}
+
+const OUTLETS = (data ?? []).map((row) => {
+  const store = Array.isArray(row.partner_stores) ? row.partner_stores[0] : row.partner_stores;
+  return { name: store?.name ?? row.code, code: row.code };
+});
 
 const OUT_DIR = path.resolve('qr-codes');
 const PNG_OPTS = { errorCorrectionLevel: 'M', margin: 2, width: 1024, color: { dark: '#000000', light: '#ffffff' } };

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { OUTLETS, getOutlet } from "@/data/outlets";
+import { getOutlets, getOutlet } from "@/data/outlets";
 import { appStoreUrl, playStoreUrl } from "@/data/storeLinks";
 import CopyButton from "./CopyButton";
 import LayoutMobile from "./LayoutMobile";
@@ -10,8 +10,9 @@ import "./landing.css";
 // codes are the only valid params; anything else 404s.
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return OUTLETS.map((o) => ({ code: o.code }));
+export async function generateStaticParams() {
+  const outlets = await getOutlets();
+  return outlets.map((o) => ({ code: o.code }));
 }
 
 export async function generateMetadata({
@@ -20,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ code: string }>;
 }): Promise<Metadata> {
   const { code } = await params;
-  const outlet = getOutlet(code);
+  const outlet = await getOutlet(code);
   if (!outlet) return { title: "Download" };
   return {
     title: `Download · ${outlet.name}`,
@@ -34,7 +35,7 @@ export default async function OutletLandingPage({
   params: Promise<{ code: string }>;
 }) {
   const { code } = await params;
-  const outlet = getOutlet(code);
+  const outlet = await getOutlet(code);
   if (!outlet) notFound();
 
   const { name, venue } = outlet;
