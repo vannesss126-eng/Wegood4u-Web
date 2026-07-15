@@ -30,6 +30,9 @@ const VENUE_BY_STORE_ID: Record<string, string> = {
   "tg-kepong": "Kepong",
   "tg-bukit-jalil": "Bukit Jalil",
   "tg-signature-ss2": "SS2",
+  "mai-heun-60": "Mae Rim",
+  "akathip-chokdee": "Chiang Mai",
+  "k-boo-nimman": "Nimman",
 };
 
 type Row = {
