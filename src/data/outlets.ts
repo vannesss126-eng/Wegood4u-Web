@@ -19,6 +19,9 @@ export type Outlet = {
   code: string;
   name: string;
   venue: string;
+  /** "outlet" = per-store QR (store_referral_codes); "event" = event partner
+   *  invitation code (invitation_codes, profiles.role = 'event'). */
+  kind: "outlet" | "event";
 };
 
 const VENUE_BY_STORE_ID: Record<string, string> = {
@@ -57,11 +60,54 @@ export const getOutlets = cache(async (): Promise<Outlet[]> => {
       code: row.code,
       name: store.name,
       venue: VENUE_BY_STORE_ID[store.id] ?? store.name,
+      kind: "outlet" as const,
     }];
   });
 });
 
+// Event partners (e.g. Amazing Thailand). Their referral code lives in
+// invitation_codes (the user chain), attached to a profile with role = 'event'.
+// Same `/r/<code>` landing template, event-appropriate wording.
+//
+// STATIC_EVENTS are always given a landing page, even before the Supabase account
+// exists — because the QR/poster code is already public. Once the matching
+// profiles.role='event' account exists, its DB row takes precedence (name, etc.).
+// Unlike outlet codes, these live promo codes ARE public (printed on posters), so
+// keeping them here is fine.
+const STATIC_EVENTS: Outlet[] = [
+  // Code is case-sensitive and displayed/entered exactly as written (all caps here).
+  { code: "MIRACLETH01", name: "Amazing Thailand", venue: "Amazing Thailand", kind: "event" },
+];
+
+export const getEvents = cache(async (): Promise<Outlet[]> => {
+  const byCode = new Map<string, Outlet>();
+  for (const e of STATIC_EVENTS) byCode.set(e.code.toLowerCase(), e);
+
+  try {
+    const { data, error } = await supabase
+      .from("invitation_codes")
+      .select("code, profiles!inner(id, full_name, username, role)")
+      .eq("is_active", true)
+      .eq("profiles.role", "event");
+    if (!error) {
+      type P = { id: string; full_name: string | null; username: string | null; role: string };
+      type ERow = { code: string; profiles: P | P[] | null };
+      for (const row of (data as ERow[] | null) ?? []) {
+        const p = Array.isArray(row.profiles) ? row.profiles[0] : row.profiles;
+        if (!p) continue;
+        const name = p.full_name || p.username || "Wegood4u Event";
+        byCode.set(row.code.toLowerCase(), { code: row.code, name, venue: name, kind: "event" });
+      }
+    }
+  } catch {
+    // keep the static fallback
+  }
+  return [...byCode.values()];
+});
+
 export async function getOutlet(code: string): Promise<Outlet | undefined> {
-  const outlets = await getOutlets();
-  return outlets.find((o) => o.code.toLowerCase() === code.toLowerCase());
+  const [outlets, events] = await Promise.all([getOutlets(), getEvents()]);
+  return [...outlets, ...events].find(
+    (o) => o.code.toLowerCase() === code.toLowerCase()
+  );
 }
