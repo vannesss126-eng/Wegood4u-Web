@@ -47,6 +47,7 @@ function StoreButtons({ code }: { code: string }) {
 
 export default function LayoutMobile({ outlet }: { outlet: Outlet }) {
   const { name, venue, code } = outlet;
+  const sourceChip = outlet.kind === "event" ? venue : `${venue} outlet`;
 
   return (
     <div className="m-root">
@@ -98,13 +99,13 @@ export default function LayoutMobile({ outlet }: { outlet: Outlet }) {
             <path d="M4 9v11h16V9" />
             <path d="M9 20v-6h6v6" />
           </svg>
-          {venue} outlet
+          {sourceChip}
         </div>
         <div className="m-ref-code">
           <span className="m-code">{code}</span>
           <CopyButton code={code} variant="m-copy" />
         </div>
-        <p className="m-ref-hint">On iPhone? Enter this code at sign-up so your outlet gets the credit.</p>
+        <p className="m-ref-hint">On iPhone? Enter this code at sign-up so it&apos;s credited.</p>
 
         <StoreButtons code={code} />
       </div>

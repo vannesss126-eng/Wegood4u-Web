@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getOutlets, getOutlet } from "@/data/outlets";
+import { getOutlets, getEvents, getOutlet } from "@/data/outlets";
 import { appStoreUrl, playStoreUrl } from "@/data/storeLinks";
 import CopyButton from "./CopyButton";
 import LayoutMobile from "./LayoutMobile";
 import "./landing.css";
 
-// Static export: pre-render one HTML file per outlet code (/r/TGMBJ7, …). The 8
-// codes are the only valid params; anything else 404s.
+// Static export: pre-render one HTML file per referral code (/r/TGMBJ7, /r/Amzthai01,
+// …) — outlet codes + event-partner codes. Anything else 404s.
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const outlets = await getOutlets();
-  return outlets.map((o) => ({ code: o.code }));
+  const [outlets, events] = await Promise.all([getOutlets(), getEvents()]);
+  return [...outlets, ...events].map((o) => ({ code: o.code }));
 }
 
 export async function generateMetadata({
@@ -40,6 +40,8 @@ export default async function OutletLandingPage({
 
   const { name, venue } = outlet;
   const refCode = outlet.code;
+  const isEvent = outlet.kind === "event";
+  const sourceChip = isEvent ? venue : `${venue} outlet`;
 
   return (
     <div className="r-page">
@@ -67,7 +69,7 @@ export default async function OutletLandingPage({
             </h1>
             <p className="lede">
               Eat. Snap. Earn. Visit restaurants, snap your food selfies, collect credits and unlock
-              free stays — your referral from this outlet is ready to go.
+              free stays — your referral is ready to go.
             </p>
 
             <div className="feat-row">
@@ -155,13 +157,13 @@ export default async function OutletLandingPage({
                   <path d="M4 9v11h16V9" />
                   <path d="M9 20v-6h6v6" />
                 </svg>
-                {venue} outlet
+                {sourceChip}
               </div>
               <div className="ref-code">
                 <span className="code">{refCode}</span>
                 <CopyButton code={refCode} />
               </div>
-              <p className="rf-hint">On iPhone? Enter this code at sign-up so your outlet gets the credit.</p>
+              <p className="rf-hint">On iPhone? Enter this code at sign-up so it&apos;s credited.</p>
             </div>
           </div>
         </div>
@@ -192,8 +194,8 @@ export default async function OutletLandingPage({
               <div className="num">2</div>
               <h3>Sign up with your code</h3>
               <p>
-                Your outlet code <b>{refCode}</b> is pre-filled on Android. On iPhone, just paste it at
-                sign-up so this outlet gets credited.
+                Your referral code <b>{refCode}</b> is pre-filled on Android. On iPhone, just paste it at
+                sign-up so it&apos;s credited.
               </p>
               <span className="tag">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
