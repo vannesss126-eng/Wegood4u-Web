@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 qr-codes/
+
+# raw scraped originals (156MB) — processed picks go to public/images
+assets-raw/

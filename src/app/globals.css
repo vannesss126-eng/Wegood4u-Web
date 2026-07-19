@@ -3,6 +3,48 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ─── Wegood4u revamp tokens — source of truth: revamp-handoff/DESIGN.md ───
+   Coral = action. Green = reward/growth. Cream canvas, ink dark sections. */
+@theme {
+  /* Brand */
+  --color-coral-500: #ef4a46;
+  --color-coral-600: #d93a36;
+  --color-coral-100: #ffe9dd;
+  --color-green-700: #206e56;
+  --color-green-500: #27ae60;
+  /* Canvas & ink */
+  --color-cream-50: #fbf8f3;
+  --color-cream-100: #f4eee4;
+  --color-ink-950: #0e1320;
+  --color-ink-900: #222c3e;
+  /* Text */
+  --color-text-900: #2c2d33;
+  --color-text-600: #6b6f76;
+  --color-ondark-100: #f5f2ec;
+  --color-ondark-400: #aeb7c6;
+  /* Borders */
+  --color-line-cream: #e9e2d6;
+  --color-line-white: #e9ecf1;
+  --color-line-ink: #2a3446;
+
+  /* Elevation (DESIGN.md §6) */
+  --shadow-card: 0 2px 8px rgba(14, 19, 32, 0.06);
+  --shadow-card-hover: 0 12px 32px rgba(14, 19, 32, 0.1);
+  --shadow-overlay: 0 24px 48px rgba(14, 19, 32, 0.14);
+  --shadow-cta: 0 8px 24px rgba(239, 74, 70, 0.35);
+
+  /* Radii */
+  --radius-chip: 8px;
+  --radius-input: 12px;
+  --radius-card: 20px;
+  --radius-media: 28px;
+
+  /* Section rhythm */
+  --spacing-section-sm: 4rem;   /* 64px  mobile   */
+  --spacing-section-md: 6rem;   /* 96px  tablet   */
+  --spacing-section-lg: 8rem;   /* 128px desktop  */
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -75,6 +117,12 @@
 }
 
 @theme inline {
+  /* Fonts must live in @theme inline: they reference next/font vars that are
+     defined on <body>, so they can only resolve at the element, not :root. */
+  --font-display: var(--font-baloo), ui-rounded, system-ui, sans-serif;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

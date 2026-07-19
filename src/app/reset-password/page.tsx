@@ -5,13 +5,19 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabaseClient';
 
 // Password requirement checks (must match UI list)
+// Upper bound: bcrypt truncates at 72 bytes, so longer input is silently ignored.
+const MAX_PASSWORD_LENGTH = 72;
 const hasMinLength = (p: string) => p.length > 8;
 const hasNumber = (p: string) => /\d/.test(p);
 const hasLowercase = (p: string) => /[a-z]/.test(p);
 const hasUppercase = (p: string) => /[A-Z]/.test(p);
 
 const allRequirementsMet = (p: string) =>
-  hasMinLength(p) && hasNumber(p) && hasLowercase(p) && hasUppercase(p);
+  hasMinLength(p) &&
+  hasNumber(p) &&
+  hasLowercase(p) &&
+  hasUppercase(p) &&
+  p.length <= MAX_PASSWORD_LENGTH;
 
 export default function ResetPasswordPage() {
   const router = useRouter();
@@ -48,7 +54,6 @@ export default function ResetPasswordPage() {
         });
 
         if (error) {
-          console.error('setSession error', error);
           setError('Could not validate reset link. Please request a new one.');
           setIsValidLink(false);
           return;
@@ -60,8 +65,7 @@ export default function ResetPasswordPage() {
         }
 
         setIsValidLink(true);
-      } catch (e) {
-        console.error(e);
+      } catch {
         setError('Something went wrong. Please request a new reset link.');
         setIsValidLink(false);
       } finally {
@@ -96,10 +100,13 @@ export default function ResetPasswordPage() {
     setLoading(false);
 
     if (error) {
-      console.error('updateUser error', error);
       setError(error.message ?? 'Failed to reset password. Please try again.');
       return;
     }
+
+    // Drop the recovery session — it must not persist in this browser after the
+    // password is set (the app is where the user actually signs in).
+    await supabase.auth.signOut();
 
     setSuccess(true);
 
