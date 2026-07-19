@@ -13,9 +13,18 @@
 > 4. Do the next unchecked step. Update STATUS + checkboxes when done.
 
 ## STATUS
-- **Current phase: 0 (not started)**
-- Blockers: supervisor sign-off on palette unification (DESIGN.md §2) + display
-  font confirmation (Task B) — Phase 0 can start regardless; Phase 1 hero needs both.
+- **Current phase: 0 → mostly done (2026-07-19, branch `revamp`, commit 2b8ba60).**
+  Done: 0.1 (branch+tag+wp-archive), 0.2 (132 images in `assets-raw/`, AVIF/WebP
+  conversion still pending), 0.5 (S1/S4/S5 fixed), 0.6 (headers+CSP; dev-only
+  unsafe-eval), 0.7 (tokens in `@theme` + Baloo 2 + `/styleguide`), 0.8 (Lenis
+  `SmoothScroll` + `src/lib/motion.ts`), 0.9 partial (CLAUDE.md yes; CI no),
+  plus: next 16.2.10 security upgrade. `/r/[code]` + `/reset-password` verified
+  working in browser.
+- **Remaining in Phase 0:** 0.3/0.4 Vercel project + preview deploy (needs your
+  Vercel login), 0.9 CI + Playwright smoke, 0.10 Supabase hardening migrations
+  (user action, app repo), image AVIF/WebP conversion.
+- **Next build step:** Phase 1.1 (nav) + 1.2 (hero) — user approval of
+  `/styleguide` is the gate. Blocker for hero art: none (real photos available).
 
 ---
 

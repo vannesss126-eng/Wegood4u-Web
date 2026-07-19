@@ -111,7 +111,7 @@ export default function ResetPasswordPage() {
     setSuccess(true);
 
     setTimeout(() => {
-      router.push('/');
+      router.push('/reset-password/success');
     }, 2000);
   };
 
