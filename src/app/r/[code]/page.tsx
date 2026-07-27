@@ -22,10 +22,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { code } = await params;
   const outlet = await getOutlet(code);
-  if (!outlet) return { title: "Download" };
+  if (!outlet) return { title: "Download", robots: { index: false, follow: false } };
   return {
     title: `Download · ${outlet.name}`,
     description: `Download the Wegood4u app — your referral from ${outlet.name} is ready. Eat. Snap. Earn.`,
+    // NEVER index these. The URL contains a live referral code; an indexed page
+    // is a published code, and a published code can be claimed without ever
+    // visiting the store — which breaks `referred_by_store_id` attribution.
+    // next-sitemap also excludes /r/* and disallows it in robots.txt; this is
+    // the directive that actually binds.
+    robots: { index: false, follow: false },
   };
 }
 
