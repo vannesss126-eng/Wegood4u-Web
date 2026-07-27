@@ -11,7 +11,12 @@ export function appStoreUrl(): string {
 // Referrer API). Encode `ref=<CODE>` so the app can read it on first launch and
 // set referred_by_store_id automatically. Verifiable only via a Play-delivered
 // install (internal testing track), never a sideloaded APK.
-export function playStoreUrl(code: string): string {
-  const referrer = encodeURIComponent(`ref=${code}`);
-  return `https://play.google.com/store/apps/details?id=${ANDROID_PACKAGE}&hl=en-US&referrer=${referrer}`;
+//
+// `code` is optional: the marketing pages link to the plain store listing with no
+// referrer, while /r/<code> always passes one. Never emit an empty `ref=` — the
+// app would read a blank referrer as a real (and wrong) attribution.
+export function playStoreUrl(code?: string): string {
+  const base = `https://play.google.com/store/apps/details?id=${ANDROID_PACKAGE}&hl=en-US`;
+  if (!code) return base;
+  return `${base}&referrer=${encodeURIComponent(`ref=${code}`)}`;
 }
