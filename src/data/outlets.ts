@@ -9,11 +9,15 @@
 // from the same codes by `Web/scripts/generate-outlet-qr.mjs`.
 //
 // `venue` is a presentation-only short label (chips: "Bukit Jalil outlet"). It has
-// no DB column, so it stays here — keyed by `partner_store_id` (already public in
-// the migrations), NOT by referral code, so no code leaks into the repo.
+// no DB column, so it lives in `partnerStores.ts` — keyed by `partner_store_id`
+// (already public in the migrations), NOT by referral code, so no code leaks into
+// the repo. That module imports nothing: the marketing pages read the same list
+// and must not inherit this one's Supabase dependency, since supabaseClient
+// throws at module load when the env vars are missing.
 
 import { cache } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import { VENUE_BY_STORE_ID } from "@/data/partnerStores";
 
 export type Outlet = {
   code: string;
@@ -22,20 +26,6 @@ export type Outlet = {
   /** "outlet" = per-store QR (store_referral_codes); "event" = event partner
    *  invitation code (invitation_codes, profiles.role = 'event'). */
   kind: "outlet" | "event";
-};
-
-const VENUE_BY_STORE_ID: Record<string, string> = {
-  "tg-bukit-raja-klang": "Bukit Raja",
-  "tg-bayu-tinggi-klang": "Bayu Tinggi",
-  "tg-puchong-kinrara": "Puchong Kinrara",
-  "tg-semenyih-ecohill": "Semenyih Ecohill",
-  "tg-cheras-jln-lanchang": "Cheras",
-  "tg-kepong": "Kepong",
-  "tg-bukit-jalil": "Bukit Jalil",
-  "tg-signature-ss2": "SS2",
-  "mai-heun-60": "Mae Rim",
-  "akathip-chokdee": "Chiang Mai",
-  "k-boo-nimman": "Nimman",
 };
 
 type Row = {
