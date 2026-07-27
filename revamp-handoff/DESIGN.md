@@ -40,6 +40,7 @@ and motion that feels weighty and considered (Lenis + GSAP), never busy.
 ## 2. Color Palette & Roles
 
 ### Brand
+
 - **Coral 500 — `#EF4A46`** *(primary accent)*: primary buttons, text links, active
   nav, icons, eyebrow labels, focus rings. The single "act now" color. Bridges the
   WP site's red buttons and the landing pages' orange.
@@ -52,6 +53,7 @@ and motion that feels weighty and considered (Lenis + GSAP), never busy.
   Use sparingly on top of Green 700 surfaces or cream.
 
 ### Canvas & Ink
+
 - **Cream 50 — `#FBF8F3`** *(page canvas, already in landing.css)*: default page
   background. Never pure white behind long content.
 - **Cream 100 — `#F4EEE4`**: alternating section background, card-on-cream surfaces.
@@ -64,10 +66,12 @@ and motion that feels weighty and considered (Lenis + GSAP), never busy.
 - **Text on dark — `#F5F2EC`**: headings on ink; body on ink at `#AEB7C6`.
 
 ### Borders & Surfaces
+
 - **Border light — `#E9E2D6`** (warm, on cream) / **`#E9ECF1`** (cool, on white).
 - **Border dark — `#2A3446`** on ink sections.
 
 ### Rules
+
 - Contrast: body text must meet WCAG AA (4.5:1). `#2C2D33` on `#FBF8F3` ≈ 12:1 ✓.
   Coral 500 on cream is for **large text/CTAs only** — never small body copy.
 - Never place Coral text on Green or vice versa. They meet only via white/cream/ink.
@@ -77,6 +81,7 @@ and motion that feels weighty and considered (Lenis + GSAP), never busy.
 ## 3. Typography Rules
 
 ### Font Families
+
 - **Display — `Baloo 2`** (Google Fonts, weights 500–700): all headings, the brand's
   rounded playful voice, refined. *(Pending Task B: if the client confirms the WP
   site's original display face, swap it in here — same scale applies.)*
@@ -86,23 +91,24 @@ and motion that feels weighty and considered (Lenis + GSAP), never busy.
 
 ### Hierarchy
 
-| Role | Font | Size (desktop) | Weight | Line height | Tracking | Notes |
-|---|---|---|---|---|---|---|
-| Hero Display | Baloo 2 | 72px | 700 | 1.05 | -1px | Homepage hero only; mobile 40px |
-| Display | Baloo 2 | 56px | 700 | 1.1 | -0.5px | Page heroes, CTA band; mobile 36px |
-| H1 | Baloo 2 | 48px | 600 | 1.15 | -0.5px | Page titles; mobile 32px |
-| H2 | Baloo 2 | 36px | 600 | 1.2 | 0 | Section headings; mobile 28px |
-| H3 | Baloo 2 | 26px | 600 | 1.3 | 0 | Card titles, sub-sections |
-| H4 | Geist | 20px | 600 | 1.4 | 0 | Minor headers, list titles |
-| Eyebrow | Geist | 13px | 600 | 1.4 | +2px | UPPERCASE, Coral 500 — keeps the current site's section-label pattern |
-| Body Large | Geist | 18px | 400 | 1.65 | 0 | Intros, hero subcopy |
-| Body | Geist | 16px | 400 | 1.65 | 0 | Default |
-| Body Small | Geist | 14px | 400 | 1.55 | 0 | Meta, secondary |
-| Caption | Geist | 12px | 400 | 1.5 | +0.3px | Dates, footnotes |
-| Button | Geist | 15px | 600 | 1 | +0.3px | Sentence case (not ALL CAPS) |
-| Code chip | Geist Mono | 18px | 600 | 1 | +1px | Referral codes |
+| Role         | Font       | Size (desktop) | Weight | Line height | Tracking | Notes                                                                  |
+| ------------ | ---------- | -------------- | ------ | ----------- | -------- | ---------------------------------------------------------------------- |
+| Hero Display | Baloo 2    | 72px           | 700    | 1.05        | -1px     | Homepage hero only; mobile 40px                                        |
+| Display      | Baloo 2    | 56px           | 700    | 1.1         | -0.5px   | Page heroes, CTA band; mobile 36px                                     |
+| H1           | Baloo 2    | 48px           | 600    | 1.15        | -0.5px   | Page titles; mobile 32px                                               |
+| H2           | Baloo 2    | 36px           | 600    | 1.2         | 0        | Section headings; mobile 28px                                          |
+| H3           | Baloo 2    | 26px           | 600    | 1.3         | 0        | Card titles, sub-sections                                              |
+| H4           | Geist      | 20px           | 600    | 1.4         | 0        | Minor headers, list titles                                             |
+| Eyebrow      | Geist      | 13px           | 600    | 1.4         | +2px     | UPPERCASE, Coral 500 — keeps the current site's section-label pattern |
+| Body Large   | Geist      | 18px           | 400    | 1.65        | 0        | Intros, hero subcopy                                                   |
+| Body         | Geist      | 16px           | 400    | 1.65        | 0        | Default                                                                |
+| Body Small   | Geist      | 14px           | 400    | 1.55        | 0        | Meta, secondary                                                        |
+| Caption      | Geist      | 12px           | 400    | 1.5         | +0.3px   | Dates, footnotes                                                       |
+| Button       | Geist      | 15px           | 600    | 1           | +0.3px   | Sentence case (not ALL CAPS)                                           |
+| Code chip    | Geist Mono | 18px           | 600    | 1           | +1px     | Referral codes                                                         |
 
 ### Principles
+
 - Max text measure: **65ch** body, **20ch** display headings. Big type, short lines.
 - Headings never wrap past 3 lines; cut copy, not size.
 - Scale ratio ≈ 1.33 between adjacent heading steps; 8px baseline rhythm.
@@ -113,9 +119,9 @@ and motion that feels weighty and considered (Lenis + GSAP), never busy.
 ## 4. Component Stylings
 
 ### Buttons
+
 All buttons are **pill-shaped** (`border-radius: 9999px`), padding `14px 28px`
-(desktop) / min-height 48px (mobile), font 15px/600, transition `all 0.25s
-cubic-bezier(0.22, 1, 0.36, 1)`.
+(desktop) / min-height 48px (mobile), font 15px/600, transition `all 0.25s cubic-bezier(0.22, 1, 0.36, 1)`.
 
 - **Primary (Coral):** bg `#EF4A46`, text `#FFFFFF`. Hover: bg `#D93A36`, lift
   `translateY(-2px)` + shadow `0 8px 24px rgba(239,74,70,0.35)`. Active: lift 0,
@@ -128,28 +134,19 @@ cubic-bezier(0.22, 1, 0.36, 1)`.
 - **Magnetic effect** (GSAP) on primary CTAs only — hero + final CTA band, desktop
   pointer devices only.
 
-### Cards
-- **Base card:** bg white, radius `20px`, border `1px solid #E9E2D6`, padding `28px`,
-  shadow Level 1. Hover: Level 2 + `translateY(-4px)`, 0.3s.
-- **Venue/Blog card:** image top (radius 12px inside 20px card, aspect 3:2),
-  eyebrow-style date, H3 title, excerpt, Ghost "Read more". Image zooms `scale(1.05)`
-  on hover (overflow hidden), 0.5s.
-- **Benefit card** (For Business / For Members): icon chip 48px circle (Coral 100 bg,
-  Coral 500 icon — or Green pair for member benefits), H3, checklist with Green 500
-  checks. This preserves the current site's two-column benefits pattern.
-- **Tier card** (Membership): base card + `perspective: 1000px` tilt on hover
-  (max 4°), featured tier gets Ink 950 bg + cream text + Coral CTA.
-
 ### Section Anatomy (the repeating pattern, from the current site, refined)
+
 ```
 [Eyebrow — 13px caps Coral]        e.g. "MISSION STATEMENT"
 [H2 — Baloo 2 36px]                e.g. "What we do"
 [Lede — 18px, Text 600, max 60ch]
 [Content grid]
 ```
+
 Eyebrow → heading gap `12px`; heading → lede `16px`; lede → content `48px`.
 
 ### Navigation
+
 - **Top bar (contact strip): REMOVED** in the revamp — phone/email live in footer +
   contact page. (Cuts clutter; the current orange strip reads dated.)
 - **Nav bar:** bg `rgba(251,248,243,0.85)` + `backdrop-filter: blur(12px)`, border-b
@@ -161,6 +158,7 @@ Eyebrow → heading gap `12px`; heading → lede `16px`; lede → content `48px`
 - Mobile: hamburger → full-screen cream overlay, links as Display 36px stagger-in.
 
 ### Forms (Contact / Partnership)
+
 - Input: bg white, border `1px solid #E9E2D6`, radius `12px`, padding `14px 16px`,
   16px text. Focus: border Coral 500 + ring `0 0 0 3px rgba(239,74,70,0.15)`.
 - Label: 14px/600, 8px below-gap. Helper/error: 13px; error `#C0342F` + icon.
@@ -170,6 +168,7 @@ Eyebrow → heading gap `12px`; heading → lede `16px`; lede → content `48px`
   no browser alerts.
 
 ### Footer
+
 Bg Ink 950, text `#AEB7C6`, headings `#F5F2EC` (H4). 4 columns: brand+mission /
 Company links / Latest stories / Contact+social. Social icons: 40px circles, border
 `#2A3446`, hover bg Coral 500. Bottom bar: 13px, copyright + legal links.
@@ -181,6 +180,7 @@ replaces the current mid-page green band's job at the end of every page.
 ## 5. Layout Principles
 
 ### Spacing scale (base 4px)
+
 `4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 · 160`
 
 - **Section vertical padding: `128px` desktop / `96px` tablet / `64px` mobile.**
@@ -189,6 +189,7 @@ replaces the current mid-page green band's job at the end of every page.
 - Between heading block and content: 48–64px. Between cards in a grid: 24px.
 
 ### Grid & container
+
 - Max content width **1200px**, wide variant **1320px** for image-led sections,
   narrow variant **720px** for prose (blog articles).
 - 12-column grid, 24px gutters. Horizontal padding: 24px ≥640px, 20px below.
@@ -197,6 +198,7 @@ replaces the current mid-page green band's job at the end of every page.
   never two identical neighbors, never zebra-striping every section.
 
 ### Border radius scale
+
 `8px` chips/tags · `12px` inputs, inline images · `20px` cards · `28px` large media
 frames · `9999px` buttons/pills/avatars. Sharp corners only inside ink "editorial"
 moments if a deliberate contrast is wanted — otherwise everything is rounded.
@@ -205,13 +207,13 @@ moments if a deliberate contrast is wanted — otherwise everything is rounded.
 
 ## 6. Depth & Elevation
 
-| Level | Treatment | Use |
-|---|---|---|
-| 0 | none | Text, flat sections |
-| 1 | `0 2px 8px rgba(14,19,32,0.06)` | Cards at rest |
-| 2 | `0 12px 32px rgba(14,19,32,0.10)` | Hover cards, dropdowns |
-| 3 | `0 24px 48px rgba(14,19,32,0.14)` | Modals, mobile nav overlay |
-| Accent | `0 8px 24px rgba(239,74,70,0.35)` | Primary button hover ONLY |
+| Level  | Treatment                           | Use                        |
+| ------ | ----------------------------------- | -------------------------- |
+| 0      | none                                | Text, flat sections        |
+| 1      | `0 2px 8px rgba(14,19,32,0.06)`   | Cards at rest              |
+| 2      | `0 12px 32px rgba(14,19,32,0.10)` | Hover cards, dropdowns     |
+| 3      | `0 24px 48px rgba(14,19,32,0.14)` | Modals, mobile nav overlay |
+| Accent | `0 8px 24px rgba(239,74,70,0.35)` | Primary button hover ONLY  |
 
 Shadows are warm-neutral (ink-tinted), soft and diffuse. Never stack shadows; never
 use shadow on ink-950 sections (use border `#2A3446` + surface Ink 900 instead).
@@ -240,6 +242,7 @@ use shadow on ink-950 sections (use border `#2A3446` + surface Ink 900 instead).
 ## 8. Do's and Don'ts
 
 ### Do
+
 - Keep coral = action, green = reward/growth, everywhere, forever.
 - Double the whitespace you think a section needs; cut copy before cutting space.
 - Use one strong photograph per section; grade images warm and consistent.
@@ -248,6 +251,7 @@ use shadow on ink-950 sections (use border `#2A3446` + surface Ink 900 instead).
 - Ship every page at CLS < 0.1, LCP < 2.5s on a real phone.
 
 ### Don't
+
 - No third accent color, no gradients-as-decoration, no pure `#000`/`#FFF` fields.
 - No photo collages with mixed borders/frames (the current site's weakness).
 - No ALL-CAPS buttons ("START NOW" → "Start now").
@@ -261,12 +265,12 @@ use shadow on ink-950 sections (use border `#2A3446` + surface Ink 900 instead).
 
 ## 9. Responsive Behavior
 
-| Name | Width | Key changes |
-|---|---|---|
-| Mobile | 320–639px | 1-col, 20px padding, section pad 64px, Hero Display 40px, nav overlay, pinned scenes simplified or unpinned |
-| Tablet | 640–1023px | 2-col grids, 24px padding, section pad 96px, Display 56→44px |
-| Desktop | 1024–1439px | Full grid, 1200px container, full motion set |
-| Large | 1440px+ | 1320px wide-variant sections, Hero Display 80px |
+| Name    | Width        | Key changes                                                                                                 |
+| ------- | ------------ | ----------------------------------------------------------------------------------------------------------- |
+| Mobile  | 320–639px   | 1-col, 20px padding, section pad 64px, Hero Display 40px, nav overlay, pinned scenes simplified or unpinned |
+| Tablet  | 640–1023px  | 2-col grids, 24px padding, section pad 96px, Display 56→44px                                               |
+| Desktop | 1024–1439px | Full grid, 1200px container, full motion set                                                                |
+| Large   | 1440px+      | 1320px wide-variant sections, Hero Display 80px                                                             |
 
 - Touch targets ≥ 44×44px, 8px apart. Inputs ≥ 48px tall.
 - Image-sequence/portal scenes: mobile gets a shortened scrub distance (≤1.5vh) and
