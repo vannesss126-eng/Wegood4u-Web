@@ -1,0 +1,894 @@
+{
+  "nav": {
+    "main": "Main",
+    "homeAria": "Wegood4u home",
+    "home": "Home",
+    "aboutUs": "About Us",
+    "partnership": "Partnership",
+    "membership": "Membership",
+    "ourPartners": "Our Partners",
+    "ourProjects": "Our Projects",
+    "news": "News",
+    "contactUs": "Contact Us",
+    "faq": "F.A.Q",
+    "getApp": "Get the App",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "appModal": {
+    "title": "Download the app",
+    "subtitle": "Get the Wegood4u app and start turning restaurant visits into free stays across Malaysia and Thailand.",
+    "free": "100% free to join",
+    "markets": "Malaysia & Thailand",
+    "close": "Close"
+  },
+  "footer": {
+    "ctaTitle": "Ready when you are.",
+    "ctaText": "Get Wegood4u now — free to download, and your first visit already counts.",
+    "partnerPrompt": "Run a restaurant or hotel?",
+    "partnerLink": "Partner with us",
+    "mission": "Wegood4u is a membership portal connecting F&B and tourism businesses with bloggers. Our mission is to assist tourism and cuisine businesses expand their reach while rewarding members for sharing their experiences.",
+    "company": "Company",
+    "latestNews": "Latest News",
+    "stayConnected": "Stay Connected",
+    "copyright": "Copyright © {year} <b>{name}</b>, All rights reserved.",
+    "legalAria": "Legal",
+    "privacyPolicy": "Privacy policy",
+    "termsOfService": "Terms of service",
+    "socialOn": "Wegood4u on {platform}"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Eat. Snap. Earn.",
+      "title": "Download the <coral>Wegood4u</coral> App & start earning.",
+      "lede": "Visit restaurants, snap your food selfies, collect credits and unlock free stays — across Malaysia and Thailand.",
+      "featureDownload": "Free to download",
+      "featureSignup": "Sign up in seconds",
+      "featureEarn": "Earn from day one",
+      "rating": "Loved by food explorers across Malaysia",
+      "creditTitle": "Credits",
+      "creditNote": "On every visit & selfie",
+      "homeAlt": "The Wegood4u app home screen, showing recommended restaurants and cafés in Chiang Mai"
+    },
+    "howItWorks": {
+      "eyebrow": "Three steps",
+      "title": "From download to rewards in minutes",
+      "lede": "No fees and no application to fill in. Install the app, sign up, and your first visit already counts towards a reward.",
+      "installTitle": "Install the App",
+      "installBody": "Tap App Store or Google Play above and install Wegood4u — it's free and takes seconds.",
+      "installTag": "Free download",
+      "signupTitle": "Sign up with your code",
+      "signupBody": "Scanned a QR at a partner store? That referral code is pre-filled on Android. On iPhone, just paste it at sign-up so it's credited.",
+      "signupTag": "Referral applied",
+      "earnTitle": "Eat, snap & earn",
+      "earnBody": "Visit restaurants, snap your food selfies and collect credits towards free stays and rewards.",
+      "earnTag": "Instant rewards"
+    },
+    "rewards": {
+      "eyebrow": "What you get",
+      "title": "Four ways the App pays you back",
+      "lede": "Every visit you log turns into credits, and credits turn into stays, vouchers and perks at the places you already go.",
+      "creditsTitle": "Earn credits",
+      "creditsBody": "Collect stars on every visit and selfie.",
+      "staysTitle": "Free stays",
+      "staysBody": "Unlock accommodation rewards as you go.",
+      "snapTitle": "Snap & share",
+      "snapBody": "Turn your food photos into rewards.",
+      "referTitle": "Refer friends",
+      "referBody": "Invite others and earn even more."
+    },
+    "insideApp": {
+      "eyebrow": "Inside the App",
+      "title": "Logging a visit takes four fields",
+      "lede": "Open Tasks, hit Submit, and fill in what you already have on your phone. Credits land against your account once the visit is verified.",
+      "phoneAlt": "The Wegood4u Submit screen, with fields for date of visit, partner store, receipt and selfie",
+      "dateLabel": "Date visit",
+      "dateNote": "Pick the day you went.",
+      "storeLabel": "Select a partner store",
+      "storeNote": "Choose from the partner network below.",
+      "receiptLabel": "Upload receipt",
+      "receiptNote": "A photo of the bill is enough.",
+      "selfieLabel": "Upload selfie",
+      "selfieNote": "You, at the place. That's the whole proof."
+    },
+    "partners": {
+      "eyebrow": "Where you can earn",
+      "title": "Partner stores in Malaysia & Thailand",
+      "lede": "Each partner store carries its own QR code. Scan it at the table, and the referral is credited the moment you sign up.",
+      "locations": "{count, plural, one {# location} other {# locations}}",
+      "footnote": "New stores join every month — the App's Map tab always shows the current list.",
+      "countryMalaysia": "Malaysia",
+      "countryThailand": "Thailand"
+    },
+    "news": {
+      "eyebrow": "From the blog",
+      "title": "Our latest news",
+      "lede": "Cafés, restaurants and getaways we visited, filmed and wrote up first-hand across Malaysia and Thailand.",
+      "action": "All stories"
+    }
+  },
+  "about": {
+    "intro": {
+      "eyebrow": "Welcome to Wegood4u",
+      "title": "A platform for businesses & explorers",
+      "lede": "Wegood4u is a membership platform that connects F&B and tourism businesses with passionate bloggers and content creators. We help businesses gain authentic exposure while rewarding members for sharing their experiences.",
+      "whyTitle": "Why we created Wegood4u",
+      "whyBody": "In today's digital world, word-of-mouth is still the most powerful marketing there is — yet many businesses struggle to reach the right audience. Wegood4u was built to solve that by:",
+      "check1": "Helping businesses increase visibility through real user-generated content.",
+      "check2": "Providing explorers with experiences and rewards for their stories.",
+      "check3": "Creating a win–win ecosystem where both businesses and explorers benefit from engagement and exposure.",
+      "cta": "See how it works",
+      "staffPhotoAlt": "Café staff at a Wegood4u partner venue holding the partner cards by the till",
+      "memberPhotoAlt": "A Wegood4u member sharing a dish they discovered"
+    },
+    "why": {
+      "eyebrow": "Why choose us",
+      "title": "Where businesses and creators thrive together",
+      "body1": "We go beyond standard review platforms by creating real experiences and meaningful connections between businesses and content creators.",
+      "body2": "We don't believe in scripted ads. Every review, blog post and social share on Wegood4u is based on first-hand experience — which is exactly what builds trust and credibility.",
+      "fbLabel": "F&B partners",
+      "tourismLabel": "Tourism partners",
+      "membersLabel": "Happy members",
+      "registerCta": "Register your business",
+      "joinCta": "Join as a member",
+      "filmingPhotoAlt": "A Wegood4u creator being filmed at a partner café"
+    },
+    "videos": {
+      "eyebrow": "Bringing businesses to life",
+      "title": "Featured in our video",
+      "watchMore": "Watch more on YouTube"
+    },
+    "team": {
+      "eyebrow": "Our team",
+      "title": "Meet the people behind Wegood4u",
+      "lede": "A small, hands-on team building the platform and the partnerships behind it.",
+      "ceo": "CEO",
+      "techLead": "Tech Lead"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact us",
+      "title": "We'd love to hear from you.",
+      "body": "Whether you're a business partner, an aspiring member, or simply have a question, our team is ready to help. Send us a message and we'll get back to you."
+    },
+    "details": {
+      "emailLabel": "Email us",
+      "callLabel": "Call us",
+      "followLabel": "Follow us",
+      "malaysia": "Malaysia",
+      "thailand": "Thailand"
+    },
+    "form": {
+      "nameLabel": "Your name",
+      "emailLabel": "Email",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "messageLabel": "Message",
+      "messagePlaceholder": "How can we help?",
+      "optional": "(optional)",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "successTitle": "Thanks — we've got your message.",
+      "successBody": "Our team will reply at the email you gave us. In the meantime, you're welcome to write to us directly at <link>enquiry@wegood4u.com</link>.",
+      "emailFallback": "Prefer email? Write to <link>enquiry@wegood4u.com</link>.",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "nameTooLong": "That's a little long — 120 characters max.",
+        "emailRequired": "Please enter your email.",
+        "emailInvalid": "Please enter a valid email address.",
+        "emailTooLong": "Please use a shorter email address.",
+        "subjectTooLong": "Please keep the subject under 150 characters.",
+        "messageTooShort": "Please add a little more detail (10+ characters).",
+        "messageTooLong": "Please keep it under 2000 characters.",
+        "checkFields": "Please check the highlighted fields.",
+        "rateLimit": "You've sent a few messages already. Please give it a minute and try again.",
+        "recaptcha": "We couldn't verify you're human. Please try again, or email us at enquiry@wegood4u.com.",
+        "sendFailed": "Something went wrong sending your message. Please email us directly at enquiry@wegood4u.com."
+      }
+    }
+  },
+  "howItWorksPage": {
+    "hero": {
+      "eyebrow": "How it works",
+      "title": "Turn everyday visits into rewards.",
+      "lede": "Wegood4u is simple: visit a partner venue, share the experience, and collect points towards free stays, vouchers and VIP perks. Here's the whole loop, start to finish — and it's free to join.",
+      "pillFree": "Free to join",
+      "pillSignup": "Sign up in seconds",
+      "pillFirstVisit": "Your first visit already counts"
+    },
+    "journey": {
+      "eyebrow": "Step by step",
+      "title": "Visit, share, earn — then again",
+      "lede": "The whole loop is minutes of effort for rewards you actually want. Do it once to see how it feels; do it ten times to unlock something special.",
+      "visitTitle": "Visit",
+      "visitBody": "Open the map and pick a partner — a restaurant, café, hotel or attraction. Members reach top venues across Malaysia and Thailand, and are often looked after a little better when they arrive. Choose somewhere, go, and enjoy it.",
+      "shareTitle": "Share",
+      "shareBody": "Take a selfie at the venue and a photo of the place itself — that's your proof of visit. Submit it through the app's Tasks tab in about a minute. Feeling creative? Turn it into a blog post, a review or a reel, in your own voice.",
+      "earnTitle": "Earn",
+      "earnBody": "Our team verifies each submission and credits your points. Every visit counts, and on your tenth you unlock an exclusive reward — dining vouchers, travel gifts and experiences from our partners. Then the count resets, and you go again.",
+      "earnChip": "10 visits → one exclusive reward"
+    },
+    "rewardLoop": {
+      "eyebrow": "The reward",
+      "title": "<sr>Ten </sr>visits, one exclusive reward.",
+      "lede": "Every verified visit adds a point. Hit ten and you unlock a reward you actually want — then the count resets and you go again. It's 100% free to take part.",
+      "vouchersLabel": "Dining vouchers",
+      "vouchersNote": "Money off — or a meal on the house — at partner venues.",
+      "giftsLabel": "Travel gifts",
+      "giftsNote": "Free stays and perks as you climb past ten visits.",
+      "experiencesLabel": "Experiences",
+      "experiencesNote": "VIP access and one-off experiences from our partners."
+    },
+    "faqTeaser": {
+      "eyebrow": "Good to know",
+      "title": "Questions, answered",
+      "lede": "The essentials on joining, visiting and getting rewarded. There's more where these came from.",
+      "seeAll": "See all FAQs"
+    }
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "lastUpdated": "Last updated {date}"
+  },
+  "membership": {
+    "hero": {
+      "eyebrow": "Membership · Free to join",
+      "title": "Eat at 10 restaurants.<coral> Get a free hotel stay.</coral>",
+      "lede": "Every reward is one task — 10 credits. Visit partner restaurants you’d eat at anyway, snap a selfie and receipt, and let AI verify it on the spot. Six real visits and a few referrals later, a free stay worth RM 300–800 is yours. Then it resets, and you go again.",
+      "seeHow": "See how it works",
+      "trustRestaurants": "Partner restaurants",
+      "trustSubscribers": "YouTube subscribers",
+      "trustRating": "Member rating",
+      "verified": "Visit verified",
+      "taskLabel": "Your task",
+      "taskTitle": "Free hotel stay",
+      "creditsEarned": "Credits earned",
+      "legendVisits": "6 restaurant visits",
+      "legendReferral": "referral credits (max 4)",
+      "moreVisits": "3 more visits to go",
+      "stayWorth": "Free stay worth RM 300–800",
+      "availability": "Live in Klang Valley, Malaysia & Chiang Mai, Thailand"
+    },
+    "why": {
+      "eyebrow": "The reality",
+      "title": "Your friends are already earning free hotel stays.",
+      "lede": "The habit is the same. The payoff isn't. Here's what dining out is really costing you.",
+      "diningStat": "RM 10,000+",
+      "diningUnit": "spent on dining out a year",
+      "diningTitle": "You're dining out anyway",
+      "diningBody": "That's real money leaving your account every year — with nothing to show for it once the plates are cleared. Wegood4u credits the visits you'd make regardless.",
+      "travelStat": "4 free stays",
+      "travelUnit": "claimed by Gold members in 6 months",
+      "travelTitle": "They travel free. You pay full price.",
+      "travelBody": "Same restaurants, same dinners — the only difference is your friends are turning them into hotel nights while you book at full rate.",
+      "loyaltyStat": "73%",
+      "loyaltyUnit": "of loyalty points go unused",
+      "loyaltyTitle": "Old loyalty programs are dead",
+      "loyaltyBody": "Stamps, tiers and points that quietly expire. Wegood4u pays out in real stays you actually take — not a balance you'll forget you had.",
+      "closer": "Stop paying for hotels. <green>Start earning them.</green>"
+    },
+    "journey": {
+      "eyebrow": "Simple & fun",
+      "title": "From first bite to free stay in five steps",
+      "lede": "Wegood4u handles the heavy lifting. You just eat at places you already love.",
+      "downloadTitle": "Download & sign up",
+      "downloadTime": "30 seconds",
+      "downloadBody": "Create your free account in the app. No application, no fee, no credit card.",
+      "exploreTitle": "Explore restaurants",
+      "exploreTime": "100+ partners",
+      "exploreBody": "Browse partner restaurants near you on the in-app map and pick where to eat.",
+      "snapTitle": "Eat & snap",
+      "snapTime": "AI-verified",
+      "snapBody": "Snap a selfie and your receipt. AI confirms the visit against the venue in seconds.",
+      "taskTitle": "Complete your task",
+      "taskTime": "10 credits",
+      "taskBody": "Reach 10 credits — at least 6 real visits, plus up to 4 from referrals.",
+      "rewardTitle": "Claim your reward",
+      "rewardTime": "RM 300–800",
+      "rewardBody": "A free stay unlocks. Choose your hotel, resort or homestay and redeem it.",
+      "creditsTitle": "How 10 credits work",
+      "visitsLabel": "Restaurant visits",
+      "visitsNote": "At least 6 — the heart of every task",
+      "referralLabel": "Referral credits",
+      "referralNote": "Optional top-up, capped at 4",
+      "completedTask": "1 completed task",
+      "equalsStay": "= one free stay"
+    },
+    "rewards": {
+      "eyebrow": "Real rewards",
+      "title": "Complete 10 visits. Get a free stay worth RM 300–800.",
+      "lede": "Every finished task unlocks a real booking — not points, not a discount. Choose what suits the trip.",
+      "mostClaimed": "Most claimed",
+      "hotelsName": "3–4★ Hotels",
+      "hotelsBody": "City and boutique hotels — a proper night away without touching your wallet.",
+      "hotelsFeat1": "Breakfast on eligible stays",
+      "hotelsFeat2": "Central locations",
+      "hotelsFeat3": "Flexible dates",
+      "resortName": "Resort getaways",
+      "resortBody": "Beach and highland resorts with the pools, views and extras that make a trip.",
+      "resortFeat1": "Resort facilities",
+      "resortFeat2": "Weekend availability",
+      "resortFeat3": "Room upgrades by tier",
+      "homestayName": "Homestays & Airbnb",
+      "homestayBody": "Unique local homes and apartments — space to spread out, stay your way.",
+      "homestayFeat1": "Whole-home stays",
+      "homestayFeat2": "Local neighbourhoods",
+      "homestayFeat3": "Great for groups"
+    },
+    "tiers": {
+      "eyebrow": "Level up",
+      "title": "Climb the tiers. Unlock better rewards.",
+      "lede": "The more tasks you complete, the higher your tier — and the better every stay, perk and referral gets. Your tier rises automatically; nothing to renew.",
+      "bronzeRange": "0–4 tasks",
+      "bronzeFeat1": "Basic accommodation rewards",
+      "bronzeFeat2": "Standard restaurant listings",
+      "bronzeFeat3": "Community access & forums",
+      "bronzeFeat4": "Basic referral program (1×)",
+      "silverRange": "5–14 tasks",
+      "silverFeat1": "Better accommodation options",
+      "silverFeat2": "Early access to new partners",
+      "silverFeat3": "Priority booking windows",
+      "silverFeat4": "Enhanced referral rewards (1.2×)",
+      "goldRange": "15–29 tasks",
+      "goldFeat1": "Premium accommodation rewards",
+      "goldFeat2": "Priority booking at all partners",
+      "goldFeat3": "Exclusive partner deals & discounts",
+      "goldFeat4": "Gold-tier referral multiplier (1.5×)",
+      "diamondRange": "30+ tasks",
+      "diamondFeat1": "VIP experiences & luxury stays",
+      "diamondFeat2": "Personal concierge service",
+      "diamondFeat3": "Top-tier accommodation globally",
+      "diamondFeat4": "Maximum referral rewards (2×)",
+      "tableCaption": "Benefits by membership tier — accommodation quality, booking priority, partner deals, concierge service and referral multiplier across Bronze, Silver, Gold and Diamond.",
+      "qualityLabel": "Accommodation quality",
+      "qualityBronze": "3★",
+      "qualitySilver": "3–4★",
+      "qualityGold": "4★ + resorts",
+      "qualityDiamond": "Premium & suites",
+      "priorityLabel": "Booking priority",
+      "priorityBronze": "Standard",
+      "prioritySilver": "Priority",
+      "priorityGold": "High priority",
+      "priorityDiamond": "First access",
+      "dealsLabel": "Partner deals",
+      "dealsBronze": "—",
+      "dealsSilver": "Selected",
+      "dealsGold": "Full access",
+      "dealsDiamond": "Full + exclusives",
+      "conciergeLabel": "Concierge service",
+      "conciergeBronze": "—",
+      "conciergeSilver": "—",
+      "conciergeGold": "Yes",
+      "conciergeDiamond": "Dedicated",
+      "multiplierLabel": "Referral multiplier",
+      "multiplierBronze": "1×",
+      "multiplierSilver": "1.2×",
+      "multiplierGold": "1.5×",
+      "multiplierDiamond": "2×"
+    },
+    "referral": {
+      "eyebrow": "Earn passively",
+      "title": "Refer friends. Earn while they eat.",
+      "lede": "Your invites keep paying out as your circle dines. Credits reach three levels deep — you only need to share once.",
+      "directLabel": "Tier 1 — Direct",
+      "directCredit": "1 credit",
+      "directBody": "Friends you invite directly. Every time they complete a verified visit, you earn a full credit.",
+      "friendLabel": "Tier 2 — Friend of a friend",
+      "friendCredit": "0.5 credit",
+      "friendBody": "The people your friends invite. Their dining earns you half a credit each — passive by design.",
+      "networkLabel": "Tier 3 — Network",
+      "networkCredit": "0.25 credit",
+      "networkBody": "The wider network beyond that. A quarter-credit each, capped at 20 credits a month.",
+      "capTitle": "Why referral credits are capped at 4 of 10",
+      "capBody": "At least six of every task’s ten credits must come from your own real visits. It keeps the whole thing honest — for you, for other members, and for the restaurants.",
+      "realTitle": "Keeps it real",
+      "realBody": "Rewards flow from genuine dining, not from recruiting. Referrals are a bonus, never the whole game.",
+      "fairTitle": "Fair for everyone",
+      "fairBody": "No one can shortcut their way to a free stay without actually visiting restaurants themselves.",
+      "partnersTitle": "Partners get real customers",
+      "partnersBody": "Because visits stay the majority of every task, restaurants get diners who genuinely show up.",
+      "calcTitle": "Referral calculator",
+      "calcLabel": "Friends you refer",
+      "minFriends": "1 friend",
+      "maxFriends": "20 friends",
+      "rowDirect": "Direct referrals (1×)",
+      "rowFriends": "Their friends (0.5×)",
+      "rowNetwork": "Wider network (0.25×, cap 20)",
+      "credits": "{n} credits",
+      "bonusLabel": "Bonus credits per month",
+      "bonusNote": "Illustrative. Up to 4 referral credits apply to each 10-credit task — the rest carry across your next tasks."
+    },
+    "discovery": {
+      "eyebrow": "Explore & discover",
+      "title": "It's not just about rewards. It's about discovery.",
+      "lede": "Every task is a nudge to try somewhere you'd have walked past — across cuisines, neighbourhoods and two countries.",
+      "malaysian": "Local Malaysian",
+      "thai": "Thai",
+      "japanese": "Japanese",
+      "western": "Western",
+      "korean": "Korean",
+      "cafes": "Cafés & desserts",
+      "venues": "{n} venues",
+      "statVenues": "Verified partner venues",
+      "statMarkets": "Markets: Malaysia & Thailand",
+      "statRating": "Average venue rating"
+    },
+    "appFeatures": {
+      "eyebrow": "The app",
+      "title": "Everything you need. In your pocket.",
+      "lede": "One app runs the whole loop — find a table, prove the visit, watch credits climb, book the stay.",
+      "appAlt": "The Wegood4u app home screen, showing partner restaurants and task progress",
+      "mapTitle": "Nearby restaurant map",
+      "mapBody": "See every partner restaurant around you and plan where to eat next.",
+      "trackerTitle": "Live progress tracker",
+      "trackerBody": "Watch each task fill toward 10 credits in real time.",
+      "verifyTitle": "Instant AI verification",
+      "verifyBody": "Selfie and receipt confirmed against the venue in seconds.",
+      "redeemTitle": "Reward redemption",
+      "redeemBody": "Browse unlocked stays and book your free night in the app.",
+      "referralTitle": "Referral dashboard",
+      "referralBody": "Track invites and credits across all three referral tiers.",
+      "tierTitle": "Tier & achievements",
+      "tierBody": "See your current tier and exactly what unlocks the next one."
+    },
+    "community": {
+      "eyebrow": "See what you'll experience",
+      "title": "Real content. Real restaurants. Real community.",
+      "lede": "Wegood4u isn't a launch — it's a following. Here's the audience already watching, saving and sharing every partner visit.",
+      "ytSubscribers": "Subscribers",
+      "ytVideos": "Videos",
+      "ytTopViews": "Top video views",
+      "ytLikes": "Likes",
+      "ttLikes": "Likes",
+      "ttSaves": "Saves",
+      "ttShares": "Shares",
+      "ttFeatures": "Partner features",
+      "featuredPartners": "Recently featured partners",
+      "watchYt": "Watch on YouTube",
+      "followTt": "Follow on TikTok"
+    },
+    "stories": {
+      "eyebrow": "Member stories",
+      "title": "Real members. Real rewards.",
+      "lede": "Different tiers, same habit — dinners they'd have had anyway, turned into nights away.",
+      "ratedAria": "Rated 5 out of 5",
+      "sarahResult": "4 free stays in 3 months",
+      "sarahQuote": "I was eating out three times a week anyway. Now those dinners have paid for four hotel stays — I honestly don't book rooms the old way anymore.",
+      "marcusResult": "2 stays in 6 weeks",
+      "marcusQuote": "The AI verification is what sold me — snap the selfie and receipt, done, credit added. I hit my first two free stays without changing how I eat.",
+      "priyaResult": "12 stays + 47 referral credits",
+      "priyaQuote": "Referrals are the cheat code. Between my own visits and my circle, I've claimed twelve stays and banked 47 credits. Diamond perks make every trip nicer.",
+      "memberOf": "{tier} member"
+    },
+    "faq": {
+      "eyebrow": "Common questions",
+      "title": "Questions, answered",
+      "lede": "How the credits, verification, rewards and referrals actually work."
+    }
+  },
+  "news": {
+    "hero": {
+      "eyebrow": "News",
+      "title": "Stories from our tables and trails.",
+      "lede": "Every place we feature, we visited, filmed and wrote up first-hand — no scripted ads. Read <strong>{count, plural, one {# story} other {# stories}}</strong> across Malaysia ({my}) and Thailand ({th})."
+    },
+    "grid": {
+      "filterLabel": "Filter stories by category",
+      "all": "All",
+      "empty": "No stories in this category yet.",
+      "showing": "Showing {from}–{to} of {total, plural, one {# story} other {# stories}}",
+      "pagesAria": "News pages"
+    },
+    "card": {
+      "readStory": "Read story"
+    },
+    "related": {
+      "eyebrow": "Keep reading",
+      "title": "More stories"
+    },
+    "article": {
+      "back": "Back to News",
+      "minRead": "{minutes} min read",
+      "authorName": "{name} Team",
+      "authorBio": "We visit, film and review every venue ourselves — so each story is first-hand, not a scripted ad."
+    },
+    "venue": {
+      "visit": "Visit the venue"
+    },
+    "video": {
+      "title": "Video: {title}",
+      "caption": "Our visit to {title} — plays automatically (muted); tap the video for sound."
+    },
+    "ugc": {
+      "eyebrow": "From our Partners",
+      "title": "Real visits, real photos",
+      "lede": "No scripted ads. Every place here was visited, filmed and written up first-hand.",
+      "action": "See more on Instagram",
+      "heroCaption": "Chiang Mai · brunch café"
+    }
+  },
+  "ourPartners": {
+    "hero": {
+      "eyebrow": "Our partners",
+      "title": "Places worth going.",
+      "leadIntro": "Every venue on Wegood4u was visited, filmed and written up first-hand — no scripted ads.",
+      "leadCount": "Browse <strong>{count} partner venues</strong> across Thailand ({th}) and Malaysia ({my}).",
+      "leadFallback": "Browse our partner venues across Thailand and Malaysia."
+    },
+    "explorer": {
+      "searchLabel": "Search partners by name or city",
+      "searchPlaceholder": "Search by name or city…",
+      "filterCategory": "Filter by category",
+      "allCategories": "All categories",
+      "filterCountry": "Filter by country",
+      "allCountries": "All countries",
+      "countryThailand": "Thailand",
+      "countryMalaysia": "Malaysia",
+      "empty": "No stores match those filters.",
+      "showing": "Showing {from}–{to} of {count, plural, one {# store} other {# stores}}",
+      "paginationAria": "Partner directory pages"
+    },
+    "detail": {
+      "allPartners": "All partners",
+      "rating": "rating",
+      "about": "About",
+      "address": "Address",
+      "getDirections": "Get directions",
+      "openingHours": "Opening hours",
+      "phone": "Phone",
+      "priceRange": "Price range",
+      "menu": "Menu",
+      "relatedTitle": "You may also like"
+    },
+    "menuGallery": {
+      "imageAlt": "{name} menu — page {page}",
+      "viewLabel": "View {name} menu page {page}"
+    }
+  },
+  "partnership": {
+    "hero": {
+      "eyebrow": "Partnership",
+      "title": "Get found by people who actually turn up.",
+      "lede": "Tap into a network of members who visit your venue, eat your food and write about it — real user-generated content, not scripted ads. You get organic promotion, genuine engagement and international exposure, without the cost of traditional advertising.",
+      "ctaPrimary": "Partner with us",
+      "ctaSecondary": "See how it works",
+      "photoAlt": "Three café staff behind their counter holding the Wegood4u partner card, QR standee beside the till"
+    },
+    "problem": {
+      "eyebrow": "The problem",
+      "title": "Restaurant marketing is broken.",
+      "lede": "You're spending money on marketing that can't prove it works. Here's what most F&B owners face every day.",
+      "kolTitle": "KOL abandonment",
+      "kolBody": "You pay influencers RM 500–2,000 per post. They visit once, post once, then disappear — no repeat customers, no measurable ROI.",
+      "kolStat": "RM 500–2,000 per post, zero guaranteed return",
+      "adsTitle": "Wasted ad spend",
+      "adsBody": "Facebook and Google ads cost RM 3–15 per click. Most clicks never convert into paying customers actually walking through your door.",
+      "adsStat": "Average 2–5% conversion on paid ads",
+      "trackingTitle": "No customer tracking",
+      "trackingBody": "You have no way to verify whether your marketing actually brought new customers. No data, no attribution, no accountability.",
+      "trackingStat": "Zero visibility on marketing ROI",
+      "seatsTitle": "Empty seats",
+      "seatsBody": "Weekday lunches and off-peak hours stay empty. Traditional marketing can't target specific time slots or drive consistent traffic.",
+      "seatsStat": "30–40% capacity wasted off-peak"
+    },
+    "solution": {
+      "eyebrow": "The solution",
+      "title": "Wegood4u solves all of this.",
+      "lede": "A performance-based platform that delivers verified, first-time customers to your venue. You only pay for results.",
+      "statPartners": "Partner restaurants",
+      "statVideos": "Videos produced",
+      "statMarkets": "Active markets",
+      "statIncrease": "Avg. customer increase",
+      "customersTitle": "Guaranteed new & active customers",
+      "customersBody": "Every visitor is a verified, first-time customer. Our unique-store rule means each member must visit at least 6 different restaurants per cycle — referral credits are capped at 4 of 10 — so everyone at your table is a genuinely active diner.",
+      "customersHighlight": "Minimum 6 real restaurant visits per cycle",
+      "verifiedTitle": "AI-verified visits",
+      "verifiedBody": "No fake reviews, no bots. Every visit is confirmed with AI-powered selfie + receipt verification, so you only pay for real customers who actually dined with you.",
+      "verifiedHighlight": "Pay only for verified, paying customers",
+      "contentTitle": "Professional 4K content",
+      "contentBody": "Our in-house crew produces cinematic 4K video + drone content — worth RM 2,000–5,000 from a production house — distributed across TikTok, Instagram, Facebook and YouTube.",
+      "contentHighlight": "4K content included in every package",
+      "analyticsTitle": "Real-time analytics",
+      "analyticsBody": "Track every verified visit, customer demographic, peak hours and revenue in real time. Make data-driven decisions with full transparency — no black boxes.",
+      "analyticsHighlight": "Full visibility on every metric that matters"
+    },
+    "comparison": {
+      "eyebrow": "Why Wegood4u wins",
+      "title": "How we compare.",
+      "lede": "See how Wegood4u stacks up against the marketing channels most restaurants already pay for.",
+      "caption": "Comparison of Wegood4u, KOL partnerships and paid ads across cost, verification, guarantees, content, analytics and contracts.",
+      "recommended": "Recommended",
+      "unique": "Unique",
+      "colWegood4u": "Wegood4u",
+      "colKol": "KOL partnership",
+      "colAds": "Paid ads",
+      "costFeature": "Cost per customer",
+      "costA": "RM 3–8 (verified)",
+      "costB": "RM 50–200+ (unverified)",
+      "costC": "RM 15–75 (per click, not visit)",
+      "verificationFeature": "Customer verification",
+      "verificationA": "AI selfie + receipt",
+      "verificationB": "None",
+      "verificationC": "None",
+      "newCustomersFeature": "New customers guaranteed",
+      "newCustomersA": "Yes — unique-store rule",
+      "newCustomersB": "No guarantee",
+      "newCustomersC": "No guarantee",
+      "activityFeature": "Customer activity guarantee",
+      "activityA": "Min. 6 real visits per cycle (referral cap 4/10)",
+      "activityB": "No activity requirement",
+      "activityC": "No activity requirement",
+      "contentFeature": "4K content included",
+      "contentA": "Yes, every package",
+      "contentB": "Phone-quality only",
+      "contentC": "You supply creative",
+      "analyticsFeature": "Real-time analytics",
+      "analyticsA": "Full dashboard",
+      "analyticsB": "Post metrics only",
+      "analyticsC": "Click data only",
+      "contractsFeature": "Long-term contracts",
+      "contractsA": "None — leave anytime",
+      "contractsB": "Per-campaign",
+      "contractsC": "Ongoing spend required"
+    },
+    "process": {
+      "eyebrow": "Our process",
+      "title": "From application to revenue in 5 steps",
+      "lede": "Getting started is simple. The Wegood4u team handles the heavy lifting so you can focus on what you do best — running your restaurant.",
+      "stepLabel": "Step {n}: ",
+      "applyTitle": "Apply online",
+      "applyTime": "5 minutes",
+      "applyBody": "Fill out a quick application form. Our partnership team reviews your restaurant within 48 hours and schedules a consultation call.",
+      "shootTitle": "Content production day",
+      "shootTime": "1-day shoot",
+      "shootBody": "Our professional crew arrives with 4K cameras, drones and lighting. We capture your restaurant's best angles, signature dishes and your story — you keep operating as normal.",
+      "launchTitle": "Go live on the platform",
+      "launchTime": "Within 7 days",
+      "launchBody": "Your restaurant listing goes live on the Wegood4u app. Content is distributed across all social channels, and featured placement begins based on your package tier.",
+      "customersTitle": "Receive verified customers",
+      "customersTime": "Ongoing",
+      "customersBody": "Members start visiting as part of their task cycle — each completes at least 6 real restaurant visits (referral credits capped at 4 of 10). Every visit is AI-verified with selfie + receipt, and you see it live in your dashboard.",
+      "growTitle": "Track & grow",
+      "growTime": "Monthly reviews",
+      "growBody": "Monitor performance metrics, customer feedback and revenue impact. Our partnership team provides monthly insights and optimisation recommendations."
+    },
+    "benefits": {
+      "eyebrow": "Our benefits",
+      "title": "What service we offer",
+      "lede": "Our partners benefit from organic promotion, real customer engagement and increased visibility — all without the high costs of traditional advertising.",
+      "multilangTitle": "Leverage your multi-language partner",
+      "multilangBody": "We build multi-language video content — Chinese, English and Bahasa — to attract new potential customers.",
+      "trafficTitle": "Growing traffic, month after month",
+      "trafficBody": "Share in our traffic as we grow across SEO, SEM, Meta ads and Chinese platforms.",
+      "directTitle": "The business that helps your business directly",
+      "directBody": "We assist with promotions and giveaways — like double rebates — to win new conversions, not just views.",
+      "crossTitle": "Cross-collaboration without the hard work",
+      "crossBody": "We'll share your brand with up to 200 other partner brands during our Phase 2.0.",
+      "internationalTitle": "The possibility to expand internationally",
+      "internationalBody": "Looking to expand? We can channel resources — from design to capital — to help you reach new markets.",
+      "transformTitle": "Transform your business to the next level",
+      "transformBody": "We help upgrade your business digitally, with a clear Web 2.0-to-3.0 development road map."
+    },
+    "roi": {
+      "eyebrow": "See the numbers",
+      "title": "Calculate your revenue impact.",
+      "lede": "Compare your current marketing spend against Wegood4u's performance-based model. Move the sliders to match your restaurant.",
+      "visitsLabel": "Verified visits per month",
+      "visitsUnit": "{n} visits",
+      "spendLabel": "Your current monthly marketing spend",
+      "grossLabel": "Monthly gross revenue",
+      "basedOn": "Based on {amount} avg. bill",
+      "feeLabel": "Wegood4u platform fee",
+      "perVisit": "{amount} per verified visit",
+      "netLabel": "Your net new revenue",
+      "netNote": "After platform fees, every month",
+      "vsCurrent": "vs your current {amount}/mo marketing",
+      "save": "Save {amount}/mo",
+      "extraSpend": "+{amount}/mo spend",
+      "note": "Illustrative only — actual results depend on your venue, average bill and package. The per-visit fee shown is the Growth-tier rate for {flag} {country}; Starter and Premium differ."
+    },
+    "dashboard": {
+      "eyebrow": "Full transparency",
+      "title": "Track every visit. See every ringgit.",
+      "lede": "Every partner gets an analytics dashboard — real-time visibility into every verified visit, customer demographic, peak hour and ringgit of revenue impact. No guesswork, no black boxes; just clear, actionable data.",
+      "imageAlt": "The Wegood4u partner analytics dashboard — verified visits, revenue per visit, customer demographics and monthly growth",
+      "features": [
+        "Real-time verified-visit counter",
+        "Customer demographics & behaviour insights",
+        "Peak-hour analysis for staffing",
+        "Monthly revenue reports & reconciliation",
+        "Content performance across every channel"
+      ],
+      "cta": "Become a partner to get your dashboard"
+    },
+    "pricing": {
+      "eyebrow": "Transparent pricing",
+      "title": "Choose your partnership package.",
+      "lede": "A one-time content-production fee plus a small fee per verified visit. No monthly subscription, no hidden costs, no long-term contracts.",
+      "mostPopular": "Most popular",
+      "oneTime": "one-time",
+      "perVisit": "+ {amount} / verified visit",
+      "foundingRate": "Founding-partner rate",
+      "choose": "Choose {name}",
+      "starterBlurb": "For independent restaurants, hawker stalls and new F&B businesses testing the platform.",
+      "starterFeatures": [
+        "2-hour 4K video shoot",
+        "3 short-form videos (TikTok / Reels)",
+        "TikTok + Facebook distribution",
+        "Basic app listing"
+      ],
+      "growthBlurb": "Our most popular package — for established restaurants wanting maximum exposure.",
+      "growthFeatures": [
+        "Half-day 4K + drone shoot",
+        "5 short-form videos (TikTok / Reels)",
+        "All social channels distribution",
+        "Featured app listing",
+        "On-camera host interview",
+        "1 YouTube feature video",
+        "Featured placement — 30 days"
+      ],
+      "premiumBlurb": "For restaurant chains and high-end venues wanting the full cinematic treatment.",
+      "premiumFeatures": [
+        "Full-day cinematic production",
+        "8 short-form videos (TikTok / Reels)",
+        "All social channels distribution",
+        "Premium app listing",
+        "Drone + photo pack",
+        "2-person crew + interview",
+        "YouTube feature video",
+        "Featured placement — 60 days",
+        "Paid ad boost included",
+        "Raw footage delivery"
+      ],
+      "guaranteeTitle": "Quality guarantee — every visitor is a real diner",
+      "guaranteeBody": "Every Wegood4u member must complete at least 6 real restaurant visits per cycle, with referral credits capped at 4 of 10 — so everyone who walks in is a genuinely active diner, not a passive user gaming the system.",
+      "noteLive": "Showing prices for {flag} {country} ({code}). Switch market above.",
+      "noteSoon": "Showing prices for {flag} {country} ({code}). Wegood4u isn’t live in {country} yet — pricing shown for reference. Switch market above."
+    },
+    "trusted": {
+      "eyebrow": "Our trusted partners",
+      "title": "Collaborating with leading businesses"
+    },
+    "videos": {
+      "eyebrow": "Our work in action",
+      "title": "See how we present your business.",
+      "lede": "We bring your business to life through professional 4K video production distributed across YouTube, TikTok and social media — <strong>reaching 115K+ subscribers</strong> and <strong>growing</strong>.",
+      "statSubscribers": "YouTube subscribers",
+      "statVideos": "Videos produced",
+      "statViews": "Top video views",
+      "statLikes": "TikTok likes",
+      "featuredTitle": "KL's best-kept-secret Western restaurant, revealed",
+      "featuredMeta": "133K views · our most-watched feature — the production quality your venue receives",
+      "tigerTitle": "A wild day at Tiger Kingdom, Chiang Mai",
+      "tigerMeta": "84K views · cinematic drone footage",
+      "claypotTitle": "Foong Lian Claypot — 30 years of signature dishes",
+      "claypotMeta": "43K views · on-location F&B feature",
+      "watchAria": "Watch “{title}” on YouTube (opens in a new tab)",
+      "thumbAlt": "Video thumbnail: {title}",
+      "reachNote": "115K+ subscribers · 84 professionally produced restaurant videos — this is the reach your business gets when you partner with us.",
+      "watchCta": "Watch our videos"
+    },
+    "partners": {
+      "eyebrow": "Our partners",
+      "title": "Introducing our partners and their results",
+      "lede": "Behind the scenes at the venues we've filmed and featured — the F&B businesses already growing with Wegood4u.",
+      "cta": "View our partners"
+    },
+    "faq": {
+      "eyebrow": "Common questions",
+      "title": "Partnership FAQ",
+      "lede": "The essentials on cost, verification, contracts and what you get. Anything else — just ask the team below."
+    },
+    "market": {
+      "selectMarket": "Select market",
+      "soon": "soon"
+    },
+    "enquire": {
+      "eyebrow": "Get started",
+      "title": "Be part of our next success story.",
+      "lede": "Want to showcase your business through stunning visuals and creator marketing? Tell us about your venue and our team will be in touch.",
+      "nextTitle": "What happens next",
+      "steps": [
+        "We read your enquiry and get a feel for your venue.",
+        "Our team reaches out to talk through the fit.",
+        "We plan your first feature — video, photos and content."
+      ],
+      "directPrompt": "Prefer to reach us directly?"
+    },
+    "form": {
+      "optionalLabel": "(optional)",
+      "businessNameLabel": "Business name",
+      "contactNameLabel": "Your name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "locationLabel": "Location",
+      "locationPlaceholder": "City or area",
+      "messageLabel": "About your venue",
+      "messagePlaceholder": "Tell us a little about your business and what you're hoping for.",
+      "submit": "Send enquiry",
+      "submitting": "Sending…",
+      "successTitle": "Thanks — we've got it.",
+      "successBody": "Our team will be in touch at the email you gave us. In the meantime, you're welcome to write to us directly at <link>enquiry@wegood4u.com</link>.",
+      "preferEmail": "Prefer email? Write to <link>enquiry@wegood4u.com</link>.",
+      "errors": {
+        "businessNameRequired": "Please enter your business name.",
+        "contactNameRequired": "Please enter your name.",
+        "tooLong": "That's a little long — 120 characters max.",
+        "emailRequired": "Please enter your email.",
+        "emailInvalid": "Please enter a valid email address.",
+        "emailTooLong": "Please enter a shorter email address.",
+        "phoneInvalid": "That doesn't look like a phone number.",
+        "locationTooLong": "That's a little long — 120 characters max.",
+        "messageTooShort": "Please tell us a little more about your venue (10+ characters).",
+        "messageTooLong": "Please keep it under 2000 characters.",
+        "rateLimit": "You've sent a few enquiries already. Please give it a minute and try again.",
+        "checkFields": "Please check the highlighted fields.",
+        "recaptcha": "We couldn't verify you're human. Please try again, or email us at enquiry@wegood4u.com.",
+        "sendFailed": "Something went wrong sending your enquiry. Please email us directly at enquiry@wegood4u.com."
+      }
+    },
+    "workGallery": {
+      "alt": "The Wegood4u crew filming and photographing at a partner venue",
+      "viewPhoto": "View photo {index} of {total}"
+    },
+    "partnerWall": {
+      "viewLogo": "View {name} logo",
+      "logoAlt": "{name} logo"
+    }
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Our projects",
+      "title": "Showcasing our portfolio.",
+      "intro": "Expanding connections across the F&B and tourism industry — this is our journey with <strong>ThaiGood4U</strong> in Chiang Mai and <strong>MSIAGood4U</strong> in Kuala Lumpur."
+    },
+    "section": {
+      "whatWeDo": "What we do",
+      "visit": "Visit {domain}",
+      "highlights": "Project highlights"
+    },
+    "cta": {
+      "eyebrow": "Grow with us",
+      "title": "Be part of our next story.",
+      "body": "Looking to increase foot traffic, gain brand exposure and attract loyal customers? Partner with us for real digital reach and customer engagement.",
+      "partnerButton": "Partner with us",
+      "exploreButton": "Explore all venues"
+    },
+    "thaigood4u": {
+      "description": "Chiang Mai is a culinary and cultural hotspot — vibrant street food, cozy cafés and breathtaking nature. Through ThaiGood4U we collaborate with local businesses, hotels and restaurants to create an immersive travel experience for our members.",
+      "do": {
+        "promoteTitle": "Promote local F&B & tourism spots",
+        "promoteBody": "Featuring Chiang Mai food and travel hidden gems like Tiger Kingdom, Kiti Panit and Khrua Achan Saiyut.",
+        "contentTitle": "Create authentic content",
+        "contentBody": "Members visit, review and share their experiences through blogs, photos and videos.",
+        "rewardsTitle": "Offer exclusive rewards",
+        "rewardsBody": "Members earn points for visiting featured places — plus perks like our 7-day Chiang Mai stay coupon."
+      },
+      "highlights": {
+        "tigerKingdom": "Get up close with Snow White tigers and playful cubs — a unique wildlife adventure, and a must-visit for animal lovers.",
+        "khruaAchan": "Traditional Thai dishes elevated — centuries-old recipes meet innovative technique and fresh, locally sourced ingredients.",
+        "whiteRabbit": "A mystical sanctuary in the heart of Chiang Mai's nightlife, enticing night owls with whimsical charm and an intoxicating ambiance."
+      }
+    },
+    "msiagood4u": {
+      "description": "Kuala Lumpur is a food paradise — local hawker delights, high-end dining and vibrant nightlife. Through MSIAGood4U we partner with restaurants, cafés and travel destinations, giving businesses organic exposure through content-driven marketing.",
+      "do": {
+        "collaborateTitle": "Collaborate with top F&B & travel brands",
+        "collaborateBody": "Bringing more customers to KL spots like Come True Cafe, Zhang Lala Mee Tarik and Foong Lian Claypot.",
+        "contentTitle": "Create authentic content",
+        "contentBody": "Members visit, review and share their experiences through blogs, photos and videos.",
+        "rewardsTitle": "Create reward-based experiences",
+        "rewardsBody": "Encouraging members to explore, review and earn exclusive perks."
+      },
+      "highlights": {
+        "foongLian": "Few places match the authenticity and flavour of Foong Lian Claypot — a taste of Malaysia's vibrant culinary culture in KL.",
+        "mantra": "A unique culinary adventure — Papaya Salad, Clay Pot Fried Rice and Lamb, paired with signature drinks like the Butterfly Pea gin.",
+        "jotesha": "The authentic taste of Penang — from White Curry Mee to Nasi Lemak Kari Ayam, a foodie's paradise in Kuala Lumpur."
+      }
+    }
+  },
+  "forms": {
+    "recaptcha": "Protected by reCAPTCHA — the Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply."
+  }
+}
