@@ -1,0 +1,94 @@
+name: CI
+
+# Phase 0.9. The gate that keeps `/r/[code]` and `/reset-password` working —
+# those have printed QR codes and sent emails pointing at them, so a regression
+# is not something you can hotfix away.
+#
+# `Web/` is the git root (verified with `git rev-parse --show-toplevel`), so
+# every step runs at the repo root and no `working-directory` is needed.
+
+on:
+  push:
+    branches: [revamp, main]
+  pull_request:
+    branches: [revamp, main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      # The build calls generateStaticParams for /r/[code], which queries
+      # Supabase — without these the build fails outright. Anon key only; it is
+      # public by design and RLS is the actual boundary (DIRECTION-SECURITY).
+      # Add both as repository secrets before making this a required check.
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Fail fast if Supabase secrets are missing
+        run: |
+          if [ -z "$NEXT_PUBLIC_SUPABASE_URL" ] || [ -z "$NEXT_PUBLIC_SUPABASE_ANON_KEY" ]; then
+            echo "::error::Missing Supabase secrets. The /r/[code] build needs them."
+            echo "Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY as repo secrets."
+            exit 1
+          fi
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build
+
+      # Guard against the sitemap ever republishing live referral codes.
+      # The e2e suite covers this too, but a grep reports far more legibly and
+      # fails before we spend time booting browsers.
+      - name: Assert no referral codes in the sitemap
+        run: |
+          if grep -q "/r/" public/sitemap-0.xml; then
+            echo "::error::sitemap-0.xml contains /r/ URLs — that publishes live referral codes."
+            exit 1
+          fi
+          echo "sitemap clean"
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium webkit
+
+      # Reuses the build above rather than rebuilding: playwright.config.ts only
+      # starts its own server when SMOKE_BASE_URL is unset, so we start one here.
+      # Plain curl loop rather than a wait-on dependency — one less package to
+      # keep current for four lines of shell.
+      - name: Smoke tests
+        run: |
+          npx next start -p 3100 &
+          for i in $(seq 1 60); do
+            curl -sf http://127.0.0.1:3100/ >/dev/null && break
+            sleep 1
+          done
+          curl -sf http://127.0.0.1:3100/ >/dev/null || { echo "::error::server never came up"; exit 1; }
+          SMOKE_BASE_URL=http://127.0.0.1:3100 npm run smoke
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
