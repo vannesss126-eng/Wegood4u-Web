@@ -9,19 +9,41 @@
   /* Brand */
   --color-coral-500: #ef4a46;
   --color-coral-600: #d93a36;
+  /* Coral for SMALL text on cream. Coral 500 measures only 3.2–3.5:1 there and
+     fails WCAG AA (DESIGN §2 already restricts Coral 500 on cream to "large
+     text/CTAs only" — this is the missing companion for everything else:
+     eyebrows, active nav links, inline links). 5.25:1 on cream-50 / 4.82 on
+     cream-100. Coral 500 stays for display-scale accents. */
+  --color-coral-700: #c0342f;
   --color-coral-100: #ffe9dd;
   --color-green-700: #206e56;
+  --color-green-800: #1a5a47; /* DESIGN.md §4 — Green button hover */
   --color-green-500: #27ae60;
   /* Canvas & ink */
   --color-cream-50: #fbf8f3;
   --color-cream-100: #f4eee4;
   --color-ink-950: #0e1320;
   --color-ink-900: #222c3e;
+  /* Device bezel for phone mockups — one step below ink-950 so a framed
+     screenshot still separates from an ink-950 section. Frame chrome only;
+     never a page background, never a text colour. */
+  --color-device-950: #0a0e18;
   /* Text */
   --color-text-900: #2c2d33;
-  --color-text-600: #6b6f76;
+  /* Secondary text. Darkened from the original #6b6f76, which passed AA on
+     cream-50 (4.76) but FAILED on cream-100 (4.37) — so secondary copy on every
+     warmer-cream section was sub-AA. #63666d clears it on both (5.43 / 4.98)
+     and stays clearly "secondary" against text-900. */
+  --color-text-600: #63666d;
   --color-ondark-100: #f5f2ec;
   --color-ondark-400: #aeb7c6;
+  /* Illustration only (StepIllustration) — one abstracted warm neutral shared
+     by every figure. Not a UI colour; never use it for text or surfaces. */
+  --color-figure-skin: #eabf9b;
+  /* Iconography only — the gold of the app's own credit/rating star, so a star
+     drawn beside a screenshot matches the stars inside it. Not a third accent:
+     never a surface, never body text, never a CTA. */
+  --color-credit-star: #ffce00;
   /* Borders */
   --color-line-cream: #e9e2d6;
   --color-line-white: #e9ecf1;
@@ -43,6 +65,9 @@
   --spacing-section-sm: 4rem;   /* 64px  mobile   */
   --spacing-section-md: 6rem;   /* 96px  tablet   */
   --spacing-section-lg: 8rem;   /* 128px desktop  */
+
+  /* One easing constant for the entire site — DESIGN.md §4/§7 */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 :root {
@@ -170,4 +195,208 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+}
+
+@layer components {
+  /* The head→content gap SectionHead's contract says "consumers own" — every
+     grid/list/step block that follows a SectionHead carries `.content-gap`. It
+     was referenced everywhere but never defined (a no-op), so heads hugged their
+     content. Responsive: 48 → 56 → 64px. */
+  .content-gap {
+    margin-top: 3rem;
+  }
+  @media (min-width: 640px) {
+    .content-gap {
+      margin-top: 3.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .content-gap {
+      margin-top: 4rem;
+    }
+  }
+
+  /* Sibling-dim deck. Focus attention by removing it from the others.
+     Pointer devices only — a touch device must never see a dimmed grid. */
+  .deck > * {
+    transition: opacity 0.35s var(--ease-brand), filter 0.35s var(--ease-brand);
+  }
+  @media (hover: hover) {
+    .deck:has(> *:hover) > *:not(:hover) {
+      opacity: 0.6;
+      filter: saturate(0.85);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .deck > *,
+    .deck:has(> *:hover) > *:not(:hover) {
+      transition: none;
+      opacity: 1;
+      filter: none;
+    }
+  }
+
+  /* ── Trusted-partner marquee ───────────────────────────────────────────────
+     The WP /partnership/ logo wall was five Swiper rows auto-scrolling forever.
+     Rebuilt here as a pure-CSS transform loop — no JS, no external library (the
+     CSP forbids third-party scripts anyway). Each row's track holds two identical
+     copies of its logos; translating the track by -50% lands copy B exactly where
+     copy A began, so the loop is seamless at ANY viewport width. Spacing lives in
+     each tile's right margin (not a flex gap) so -50% is exactly one copy wide —
+     a flex gap would leave a half-gap seam. Edge mask dissolves logos into the
+     ink; hovering a row pauses it; reduced-motion stops it and lets you scroll. */
+  .logo-marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 6%,
+      #000 94%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 6%,
+      #000 94%,
+      transparent
+    );
+  }
+  .logo-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: logo-marquee var(--marquee-dur, 60s) linear infinite;
+    will-change: transform;
+  }
+  .logo-marquee__track[data-dir="reverse"] {
+    animation-direction: reverse;
+  }
+  /* Pause on keyboard focus too, so a focused logo button doesn't drift away. */
+  .logo-marquee:focus-within .logo-marquee__track {
+    animation-play-state: paused;
+  }
+  @media (hover: hover) {
+    .logo-marquee:hover .logo-marquee__track {
+      animation-play-state: paused;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    /* Freeze the wall in place (still clipped, still edge-masked). Not
+       overflow:auto — a scrollable aria-hidden region is a keyboard trap axe
+       rightly flags; the partner names live in the sr-only list instead. */
+    .logo-marquee__track {
+      animation: none;
+    }
+  }
+}
+
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes lb-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lb-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Grid card entrance (the /our-partners results). Staggered via an inline
+   --card-delay per item; the whole grid is re-keyed on filter/page change so
+   the stagger replays. Disabled under reduced motion. */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.card-in {
+  animation: card-in 0.5s var(--ease-brand) both;
+  animation-delay: var(--card-delay, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-in {
+    animation: none;
+  }
+}
+
+/* App-download modal (native <dialog>) entrance — the card pops, the backdrop
+   fades. Both stop under reduced motion. */
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes modal-backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+dialog.app-modal[open] {
+  animation: modal-pop 0.26s var(--ease-brand) both;
+}
+dialog.app-modal[open]::backdrop {
+  animation: modal-backdrop 0.26s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  dialog.app-modal[open],
+  dialog.app-modal[open]::backdrop {
+    animation: none;
+  }
+}
+
+/* Same-background neighbours read as one band: collapse the padding BETWEEN
+   them, so a section's generous top/bottom padding stays a divider only where
+   the background colour actually changes. Unlayered so it wins over the Tailwind
+   `py-*` utilities. Only fires where same-colour sections are adjacent — i.e. the
+   deliberate same-colour runs on /partnership; alternating pages never match. */
+section[data-bg="cream-50"] + section[data-bg="cream-50"],
+section[data-bg="cream-100"] + section[data-bg="cream-100"],
+section[data-bg="green-700"] + section[data-bg="green-700"],
+section[data-bg="ink-950"] + section[data-bg="ink-950"] {
+  padding-top: 2.5rem;
+}
+section[data-bg="cream-50"]:has(+ section[data-bg="cream-50"]),
+section[data-bg="cream-100"]:has(+ section[data-bg="cream-100"]),
+section[data-bg="green-700"]:has(+ section[data-bg="green-700"]),
+section[data-bg="ink-950"]:has(+ section[data-bg="ink-950"]) {
+  padding-bottom: 2.5rem;
+}
+
+/* reCAPTCHA v3's floating badge. Hidden because a fixed Google chip fights the
+   page design and covers content on phones. Google permits hiding it ONLY when
+   the attribution text is shown in the form instead — that's
+   `components/forms/RecaptchaNotice.tsx`, rendered under both form buttons.
+   Un-hiding the badge and deleting that notice is the only other legal combo.
+   `visibility` (not `display:none`) — the badge must stay in the layout tree or
+   grecaptcha's own positioning logic throws. */
+.grecaptcha-badge {
+  visibility: hidden;
 }
