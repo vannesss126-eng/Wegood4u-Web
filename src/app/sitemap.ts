@@ -4,22 +4,6 @@ import { SITE_URL } from "@/data/siteMeta";
 import { getStorySlugs } from "@/lib/stories";
 import { getPartnerStoreIds } from "@/lib/partnerStores";
 
-/**
- * Native App Router sitemap — replaces next-sitemap, which cannot expand the
- * dynamic `[locale]` segment (it enumerated zero URLs). This runs in the Next
- * build with path aliases + env, so it can list the concrete routes AND fetch
- * the partner-store ids the same way the `[id]` page's generateStaticParams does.
- *
- * Every entry carries hreflang `alternates.languages` mirroring the per-page
- * <head> tags: `/x` (EN, bare path) ⇄ `/th/x` (TH), plus `x-default` → EN. That
- * is what tells Google the two are one page in two languages.
- *
- * SACRED ROUTES ARE NEVER LISTED. Only the marketing routes below are emitted;
- * `/r/[code]` (live referral codes), `/reset-password`, and `/styleguide` are
- * simply absent — the whole reason a hand-authored list beats a crawl here, so
- * a store's referral code can never end up in a public, machine-readable file.
- */
-
 const STATIC_PATHS = [
   "/",
   "/about",
